@@ -1,13 +1,6 @@
-puts "Input your word:"
+#puts "Input your word:"
 
-def getting_word(word)
-  if "#{word}".end_with?('cs') || "#{word}".end_with?('CS')
-    puts 2 ** "#{word}".length.to_i
-  else
-    puts "#{word}".reverse
-  end
+def if_word_end_on_cs(word)
+  last_two_letters = word[-2..]
+  last_two_letters.casecmp('cs').zero? ? 2**word.length : word.reverse
 end
-
-word = gets.chomp
-
-getting_word(word)
